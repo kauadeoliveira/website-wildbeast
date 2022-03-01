@@ -110,17 +110,27 @@ section .caracteristicas{
     display: flex;
     grid-area: caracteristicas;
 }
+.caracteristicas > div{
+    width: 85px;
+    text-align: center;
+}
 section span.numero{
     background-image: linear-gradient(to left, var(--cor2), var(--cor1));
-    color: #b07dfb;
-    font-size: 3em;
-    line-height: 1;
-    margin: 10px auto;
+    color: #c299ff;
+    font-size: 3.1em;
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 section span.rotulo{
+    display: block;
     background-color: white;
-    border-radius: 10px;
+    color: #b07dfb;
+    padding: 5px 0;
+    margin: 5px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
 }
 
 section .image1{
