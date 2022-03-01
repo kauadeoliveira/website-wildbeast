@@ -1,0 +1,176 @@
+@charset "UTF-8";
+:root{
+    /* Cores */
+    --cor1:#a167f6;
+    --cor2:#b07dfb;
+}
+
+body{
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+    grid-template-areas: 
+    "header header header"
+    "nav    main anuncio"
+    "nav    main    anuncio";
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header{
+    display: grid;
+    background-image: linear-gradient(to left, var(--cor2), var(--cor1));
+    width: 100%;
+    height: 12vh;
+    padding: 20px;
+    align-content: center;
+    grid-template-columns: 1fr 280px;
+    grid-area: header;
+}
+
+header #home>img{
+    max-height: 30px;
+}
+.nav01 ul{
+    display: flex;
+    margin-right:45px ;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav01 ul>a{
+    background-color: rgba(0, 0, 0, 0.159);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    flex-flow: wrap row;
+}
+
+.nav02{
+    display: flex;
+    grid-area: nav;
+    padding: 30px;
+}
+.nav02 ul a li{
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
+    margin: 0 auto 26px;
+    list-style: none;
+    border-radius: 10px;
+}
+
+.nav02 ul a li img{
+    height: 100%;
+    width: 100%;
+}
+
+.nav02 ul a li:hover{
+    background-color:var(--cor2);
+}
+
+section{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "titulo caracteristicas"
+    "texto1  texto1"
+    "image1 legenda"
+    "image1 image2"
+    "texto2 texto3"
+    "purplebox  purplebox";
+    gap: 30px;
+    height: 100vh;
+}
+
+section div.titulo{
+    color: #a167f6;
+    grid-area: titulo;
+}
+section div.titulo h1{
+    font-size: 3.75em;
+}
+section div.titulo p{
+    font-size: 0.875em;
+    font-style: italic;
+}
+section .texto{
+    grid-area: texto1;
+    max-width: 100%;
+}
+
+section .caracteristicas{
+    display: flex;
+    grid-area: caracteristicas;
+}
+section span.numero{
+    background-image: linear-gradient(to left, var(--cor2), var(--cor1));
+    color: #b07dfb;
+    font-size: 3em;
+    line-height: 1;
+    margin: 10px auto;
+}
+
+section span.rotulo{
+    background-color: white;
+    border-radius: 10px;
+}
+
+section .image1{
+    grid-area: image1;
+    width: 100%;
+    border-radius: 10px;
+}
+
+section .image2{
+    grid-area: image2;
+    width:100%;
+    border-radius: 10px;
+}
+section .legenda{
+    grid-area: legenda;
+    font-size: 0.875em;
+    color: #b07dfb;
+    max-width: 16em;
+}
+
+section .texto2{
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+section .texto3{
+    grid-area: texto3;
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+section .purplebox{
+    grid-area: purplebox;
+    font-size: 1.5em;
+    background-image: linear-gradient(to left, var(--cor2), var(--cor1));
+    border-radius: 5px;
+    font-style: italic;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    justify-items: center;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
+}
+
+section .purplebox p{
+    color: white;
+    padding: 30px;
+}
+
