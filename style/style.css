@@ -134,6 +134,7 @@ section .caracteristicas{
 .caracteristicas > div{
     background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
     width: 80px;
+    height: 100px;
     margin-left: 20px;
     text-align: center;
     align-items: center;
@@ -274,7 +275,7 @@ footer p{
 }
 
 
-@media(max-width: 1100px){
+@media(max-width: 700px){
     body{
         display: grid;
         grid-template-areas: 
@@ -284,8 +285,24 @@ footer p{
         "aside aside aside"
         "footer footer  footer";
     }
+
+    body p{
+        font-size: 1em;
+    }
+
     header{
         grid-area: header;
+        height: 150px;
+        grid-template-columns: auto;
+    }
+    header #home > img{
+        width: 200px;
+    }
+    .nav01{
+        margin-top: 20px;
+    }
+    .nav01 ul{
+        gap: 8px;
     }
     .nav02{
         grid-area: nav;
@@ -295,14 +312,26 @@ footer p{
         display: flex;
         width: 100%;
     }
+    .nav02 ul>a{
+        margin-right: 10px;
+    }
     main{
         grid-area: conteudo;
+    }
+
+    section{
+        grid-template-columns: auto;
     }
     aside{
         grid-area: aside;
     }
+
     footer{
         grid-area: footer;
+    }
+
+    .caracteristicas > div{
+        height: 71px;
     }
 
 }
