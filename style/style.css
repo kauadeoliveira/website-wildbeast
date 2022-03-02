@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;900&display=swap');
+@media screen {
+    
+}
 :root{
     /* Cores */
     --cor1:#a167f6;
@@ -230,7 +233,6 @@ section .purplelist{
     font-family: 'Courier New', Courier, monospace;
     color: white;
     padding: 10px 20px;
-    width: 300px;
     border-radius: 10px;
     grid-area: purplelist;
 }
