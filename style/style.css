@@ -320,12 +320,22 @@ footer p{
     }
 
     section{
+        margin: 0 20px;
         grid-template-columns: auto;
     }
     aside{
         grid-area: aside;
+        display: grid;
+        grid-column: 1/-1;
+        grid-template-columns: 1fr 1fr;
+        grid-row: auto;
+        align-items:flex-end;
     }
 
+    aside .anuncios{
+        margin:0 22px;
+        justify-items: center;
+    }
     footer{
         grid-area: footer;
     }
