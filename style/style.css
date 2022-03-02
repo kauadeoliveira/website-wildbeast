@@ -1,31 +1,34 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;900&display=swap');
 :root{
     /* Cores */
     --cor1:#a167f6;
     --cor2:#b07dfb;
+
+    /* Fonts */
+    --font01: 'Vollkorn', Georgia, Serif;
 }
 
 body{
+    font-family: 'Vollkorn', Georgia, Serif;
     display: grid;
     grid-template-columns: minmax(160px, 1fr) 3fr 300px;
     grid-template-areas: 
     "header header header"
-    "nav    main anuncio"
-    "nav    main    anuncio";
+    "nav    main aside"
+    "footer footer  aside";
 }
 
 *{
     margin:0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 header{
     display: grid;
     background-image: linear-gradient(to left, var(--cor2), var(--cor1));
-    width: 100%;
-    height: 12vh;
+    height: 10vh;
     padding: 20px;
     align-content: center;
     grid-template-columns: 1fr 280px;
@@ -37,8 +40,7 @@ header #home>img{
 }
 .nav01 ul{
     display: flex;
-    margin-right:45px ;
-    gap: 10px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -50,7 +52,9 @@ header #home>img{
     text-decoration: none;
     flex-flow: wrap row;
 }
-
+.nav01 ul>a:hover{
+    background-color: rgba(0, 0, 0, 0.486);
+}
 .nav02{
     display: flex;
     grid-area: nav;
@@ -74,61 +78,68 @@ header #home>img{
 .nav02 ul a li:hover{
     background-color:var(--cor2);
 }
-
+main p{
+    color: #00000091;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
 section{
-    margin-top: 30px;
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1fr;
     grid-template-areas: 
     "titulo caracteristicas"
     "texto1  texto1"
     "image1 legenda"
     "image1 image2"
     "texto2 texto3"
-    "purplebox  purplebox";
-    gap: 30px;
+    "purplebox  purplebox"
+    "purplelist texto4"
+    ".          texto4";
+    gap: 25px;
     height: 100vh;
 }
 
 section div.titulo{
-    color: #a167f6;
     grid-area: titulo;
 }
 section div.titulo h1{
-    font-size: 3.75em;
+    color: #a167f6;
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 60px;
 }
 section div.titulo p{
     font-size: 0.875em;
     font-style: italic;
-}
-section .texto{
-    grid-area: texto1;
-    max-width: 100%;
+    color: #a167f6;
 }
 
 section .caracteristicas{
     display: flex;
     grid-area: caracteristicas;
+    font-family: 'Vollkorn', Georgia, Serif;
 }
 .caracteristicas > div{
-    width: 85px;
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
+    width: 80px;
+    margin-left: 20px;
     text-align: center;
+    align-items: center;
+    border-radius: 5px;
 }
 section span.numero{
-    background-image: linear-gradient(to left, var(--cor2), var(--cor1));
     color: #c299ff;
-    font-size: 3.1em;
-    padding: 10px;
-    margin-top: 40px;
-    border-radius: 5px 5px 0px 0px;
+    font-size: 2.8em;
 }
 
 section span.rotulo{
     display: block;
     background-color: white;
     color: #b07dfb;
-    padding: 5px 0;
-    margin: 5px;
+    width: 100%;
+    padding: 5px 0px;
+    margin-top: 5px;
     border-radius: 0 0 5px 5px;
     box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
 }
@@ -141,7 +152,12 @@ section .image1{
 
 section .image2{
     grid-area: image2;
-    width:100%;
+    width:90%;
+    border-radius: 10px;
+}
+
+section .image3{
+    grid-area: image3;
     border-radius: 10px;
 }
 section .legenda{
@@ -151,21 +167,30 @@ section .legenda{
     max-width: 16em;
 }
 
-section .texto2{
-    font-size: 1.2em;
-    line-height: 1.6;
-    letter-spacing: -0.005em;
+section .texto{
+    max-width: 95%;
     color: rgba(0, 0, 0, 0.7);
+    letter-spacing: -0.005em;
 }
 
-section .texto3{
+section #texto1{
+    grid-area: texto1;
+}
+
+section #texto2{
+    grid-area: texto2;
+}
+
+section #texto3{
     grid-area: texto3;
-    font-size: 1.2em;
-    line-height: 1.6;
-    letter-spacing: -0.005em;
-    color: rgba(0, 0, 0, 0.7);
+}
+section div#texto4{
+    grid-area:texto4;
 }
 
+section div#texto4 .texto4{
+    margin: 20px 0px;
+}
 section .purplebox{
     grid-area: purplebox;
     font-size: 1.5em;
@@ -175,7 +200,6 @@ section .purplebox{
     width:100%;
     height: 100%;
     text-align: center;
-    justify-items: center;
     box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
 }
 
@@ -184,3 +208,38 @@ section .purplebox p{
     padding: 30px;
 }
 
+section .purplelist{
+    background-image: linear-gradient(to top, var(--cor2), var(--cor1));
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.247);
+    list-style: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 10px;
+    grid-area: purplelist;
+}
+section .purplelist li{
+    margin: auto;
+    padding: 20px 10px;
+    border-bottom: 2px solid #ae7bfb;
+}
+aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(150px, 250px));
+    justify-items: start;
+    box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.042);
+}
+
+aside .anuncios{
+    margin: 40px 15px;
+    max-width: 90%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+aside #anuncio1{
+    grid-row: 1;
+}
